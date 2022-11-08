@@ -1,0 +1,70 @@
+body > #root > div {
+    height: 100vh;
+  }
+  
+  .appbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 5rem;
+    height: 10vh;
+    width: inherit;
+    position: sticky;
+    background-color: coral;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  .appbar a{
+    margin-right: 5rem;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .appbar #voltar{
+    margin-right: auto;
+    margin-left: 3rem;
+    border: 0.1rem solid black;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .container-mng{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container-mng h1{
+    margin-left: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .container-mng h2{
+    margin-left: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-right: 5rem;
+  }
+
+  .data-lin{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #f5f5f5;
+    flex-wrap: wrap;
+    padding-left: 20%;
+
+  }
+
+    .data-lin h2{
+        width: 10rem;
+    }
