@@ -1,21 +1,34 @@
 import './App.css';
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/landingPage/LandingPage";
 import SchedulePage from "./components/Schedule/SchedulePage";
 import ManagePage from "./components/Manage/ManagePage";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+import "./index.css";
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />}/>
-        <Route path="/schedule" element={<SchedulePage />}/>
-        <Route path="/settings" element={<ManagePage />}/>
-      </Routes>
-    </BrowserRouter>
-  );
-}
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LandingPage />,
+  },
+  {
+    path: "/schedule",
+    element: <SchedulePage />,
+  },
+  {
+    path: "/settings",
+    element: <ManagePage />,
+  },
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
