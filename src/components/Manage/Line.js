@@ -6,6 +6,7 @@ function Line(props){
 
     function handleChange(event){
         setValue(event.target.value);
+        props.data[props.i] = event.target.value;
     }
 
     const confira = (e, a) => {
