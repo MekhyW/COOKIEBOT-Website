@@ -10,8 +10,25 @@ function Schedule(){
         axios
         .get("http://projeto-2-backend-cookiebot.herokuapp.com/posts/",{headers: {"Content-Type": "application/json", "Accept": "application/json"}})
         .then((response) => {
-          console.log(response.data);
-          setData(response.data);
+          const dados = response.data;
+          console.log(dados);
+          const chunks = dados.split("\n");
+          let vals = {};
+          for (const chunk of chunks) {
+            let stuff = chunk.split(/[\n}]/)[0];
+            if (stuff.includes(":")){
+              stuff = stuff.replace('[', "").replace(']', '').replace("{", "").replace(" ","");
+              const key = stuff.split(":")[0]
+              const value = stuff.split(":")[1]
+              vals[key] = value;
+            }
+            else{
+              continue;
+            }
+          }
+          console.log(Object.keys(vals));
+          console.log(Object.values(vals));
+          setData(vals);
         })
       }
     
@@ -22,9 +39,7 @@ function Schedule(){
     return (
         <div className="data">
             <h1>Schedule</h1>
-            {data.map((day) => (
-                <Day day={day}/>
-            ))}
+            <Day day={data}/>
         </div>
     );
 }

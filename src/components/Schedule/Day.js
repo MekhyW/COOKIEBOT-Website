@@ -1,6 +1,8 @@
 
 export default function Day(props) {
 
+    //console.log(props.day);
+
 
     return (
         <div className="job">
