@@ -10,7 +10,7 @@ function Manage(){
 
     const atualizaNotas = () => {
         axios
-        .get("http://projeto-2-backend-cookiebot.herokuapp.com/chatconfigs")
+        .get("http://projeto-2-backend-cookiebot.herokuapp.com/chatconfigs/")
         .then((response) => {
           
           setData(response.data);
@@ -35,7 +35,7 @@ function Manage(){
             <Line text="Language" type="select" data={data.values[8]} />
             <Line text="Welcome message" type="text" data={data.values[9]} />
             <Line text="Rules message" type="text" data={data.values[10]}  />
-            <Button className='submit' variant="contained" size="larger" onClick={() => {axios.post("http://projeto-2-backend-cookiebot.herokuapp.com/chatconfigs",{})}} data={data.values[2]} >Submit</Button>
+            <Button className='submit' variant="contained" size="larger" onClick={() => {axios.post("http://projeto-2-backend-cookiebot.herokuapp.com/chatconfigs/",{})}} data={data.values[2]} >Submit</Button>
         </form>
     );
 }
