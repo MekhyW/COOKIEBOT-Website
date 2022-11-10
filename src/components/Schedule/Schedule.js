@@ -8,7 +8,7 @@ function Schedule(){
 
     const atualizaNotas = () => {
         axios
-        .get("http://projeto-2-backend-cookiebot.herokuapp.com/posts/",{headers: {"Content-Type": "application/json", "Accept": "application/json"}})
+        .get("https://projeto-2-backend-cookiebot.herokuapp.com/posts/",{headers: {"Content-Type": "application/json", "Accept": "application/json"}})
         .then((response) => {
           const dados = response.data;
           console.log(dados);

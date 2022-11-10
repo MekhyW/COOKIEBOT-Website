@@ -10,7 +10,7 @@ function Manage(){
 
     const atualizaNotas = () => {
         axios
-        .get("http://projeto-2-backend-cookiebot.herokuapp.com/chatconfigs/")
+        .get("https://projeto-2-backend-cookiebot.herokuapp.com/chatconfigs/")
         .then((response) => {
           
           setData(response.data);
