@@ -5,6 +5,9 @@ function Line(props){
     const [value, setValue] = useState(props.data);
 
     function handleChange(event){
+        if (props.type === "switch"){
+            setValue(event.target.checked);
+        }
         setValue(event.target.value);
     }
 
