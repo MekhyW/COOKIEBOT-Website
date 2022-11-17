@@ -12,8 +12,8 @@ function Manage(){
         axios
         .get("https://projeto-2-backend-cookiebot.herokuapp.com/chatconfigs/")
         .then((response) => {
-          
-          setData(response.data);
+          const dados = response.data.replace("True", 'true').replace("False", 'false').replace(" True", 'true').replace(" True", 'true').replace(" True", "true").replace(" False", 'false').replace(" False","false").replace(" False", "false");
+          setData(eval(dados));
         })
       }
     
@@ -21,21 +21,34 @@ function Manage(){
         atualizaNotas();
       }, []);
 
+  
+    const updateData = (key, val) => {
+        Object.defineProperty(data, key, {value:val} );
+        setData(data);}
+
     return (
         <form className="data">
             <h1>Manage</h1>
-            <Line text="Title" type="text"  data={data.values[0]} />
-            <Line text="Furbot" type="switch" data={data.values[1]} />
-            <Line text="Sticker spam limit" type="slider" data={data.values[2]} detalhes={{"mini":1, "maxi":30,"step":1, "mark":"msg"}} />
-            <Line text="No media time" type="slider" data={data.values[3]} detalhes={{"mini":0, "maxi":3600,"step":30, "mark":"time"}}/>
-            <Line text="Captcha time" type="slider" data={data.values[4]} detalhes={{"mini":0, "maxi":3600,"step":30, "mark":"time"}}/>
-            <Line text="Fun functions" type="switch" data={data.values[5]} />
-            <Line text="Utility functions" type="switch" data={data.values[6]} />
-            <Line text="SFW" type="switch" data={data.values[7]} />
-            <Line text="Language" type="select" data={data.values[8]} />
-            <Line text="Welcome message" type="text" data={data.values[9]} />
-            <Line text="Rules message" type="text" data={data.values[10]}  />
-            <Button className='submit' variant="contained" size="larger" onClick={() => {axios.post("http://projeto-2-backend-cookiebot.herokuapp.com/chatconfigs/",{})}} data={data.values[2]} >Submit</Button>
+            {data.map((item) => {
+              console.log(item);
+            return <>
+            <div className='subset'>
+              <h3>{item.title}</h3>
+            </div>
+            <Line text="Title" type="text"  data={item.title} set={updateData} />
+            <Line text="Furbot" type="switch" data={item.furbots} set={updateData} />
+            <Line text="Sticker spam limit" type="slider" data={item.sticker_spam_limit} detalhes={{"mini":1, "maxi":30,"step":1, "mark":"msg"}} set={updateData} />
+            <Line text="No media time" type="slider" data={item.nomedia_time} detalhes={{"mini":0, "maxi":3600,"step":30, "mark":"time"}} set={updateData} />
+            <Line text="Captcha time" type="slider" data={item.captcha_time} detalhes={{"mini":0, "maxi":3600,"step":30, "mark":"time"}} set={updateData} />
+            <Line text="Fun functions" type="switch" data={item.fun_functions} set={updateData} />
+            <Line text="Utility functions" type="switch" data={item.utility_functions} set={updateData} />
+            <Line text="SFW" type="switch" data={item.sfw} set={updateData} />
+            <Line text="Language" type="select" data={item.language} set={updateData} />
+            <Line text="Welcome message" type="text" data={item.welcome_message} set={updateData} />
+            <Line text="Rules message" type="text" data={item.rules_message} set={updateData}  />
+            </>
+            })}
+            <Button className='submit' variant="contained" size="larger" onClick={() => {axios.post("http://projeto-2-backend-cookiebot.herokuapp.com/chatconfigs/",{})}} data={data} >Submit</Button>
         </form>
     );
 }
