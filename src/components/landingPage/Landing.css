@@ -57,11 +57,9 @@ body > #root > div {
 }
 
 .intro img{
-  margin-top: 5rem;
-  height: 10rem;
-  width: 30rem;
-  border: 0.1rem solid black;
-  border-radius: 3%;
+  margin-top: 5px;
+  height: auto;
+  width: 90%;
 }
 
 .side{
@@ -100,7 +98,7 @@ body > #root > div {
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  background-color: #f5f5f5;
+  background-color: #f5f5f5d3;
   flex-wrap: wrap;
   padding-top: 10rem;
   padding-bottom: 10rem;

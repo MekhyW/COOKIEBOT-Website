@@ -7,8 +7,8 @@ function Landing(){
     return (
         <>
             <Intro />
-            <Side  side="l" title="Ate cura doença" desc="Aooooooooooooooo potência"/>
-            <Side  side="r" title="Irineu" desc="Você não sabe nem eu"/>
+            <Side  side="r" title="Funcionalidade 1" desc="Smooth Moves"/>
+            <Side  side="l" title="Funcionalidade 2" desc="Descrição"/>
             <Bullet />
         </>
     );

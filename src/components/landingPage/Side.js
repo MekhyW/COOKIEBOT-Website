@@ -15,7 +15,7 @@ function Side(props) {
                     <h1> {props.title} </h1>
                     <p>{props.desc}</p>
                 </div>
-                <img src="aa" alt="logo" />
+                <img src="robot_dance.gif" alt="logo" />
             </>}
             </div>
         </>

@@ -4,20 +4,21 @@ function Bullet(){
     return (
         <>
             <div className="bullet">
+                <h2> Grupos que usam </h2>
                 <div className="bullet-text">
                     <img src="aa" alt="logo" />
-                    <h2> Legumes </h2>
-                    <p>Intro</p>
+                    <h2> Grupo 1 </h2>
+                    <p>Descrição</p>
                 </div>
                 <div className="bullet-text">
                     <img src="aa" alt="logo" />
-                    <h2> Frango </h2>
-                    <p>Intro</p>
+                    <h2> Grupo 2 </h2>
+                    <p>Descrição</p>
                 </div>
                 <div className="bullet-text">
                     <img src="aa" alt="logo" />
-                    <h2> Nescau </h2>
-                    <p>Intro</p>
+                    <h2> Grupo 3 </h2>
+                    <p>Descrição</p>
                 </div>
             </div>
         </>
