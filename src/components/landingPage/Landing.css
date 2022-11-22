@@ -29,13 +29,15 @@ body > #root > div {
 }
 
 .appbar img{
-  height: 3rem;
-  width: 3rem;
+  height: 2.5rem;
+  width: 2.5rem;
   border: 0.1rem solid black;
   border-radius: 50%;
 }
 
 .appbar #voltar{
+  margin-top: 2px;
+  margin-bottom: 2px;
   margin-right: auto;
   margin-left: 3rem;
 }
