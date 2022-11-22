@@ -31,15 +31,13 @@ body > #root > div {
 .appbar img{
   height: 3rem;
   width: 3rem;
+  border: 0.1rem solid black;
+  border-radius: 50%;
 }
 
 .appbar #voltar{
   margin-right: auto;
   margin-left: 3rem;
-  border: 0.1rem solid black;
-  border-radius: 50%;
-  height: 3rem;
-  width: 3rem;
 }
 
 .intro{
@@ -107,8 +105,10 @@ body > #root > div {
   width: 100%;
   flex-wrap: wrap;
   background-color: #b6b6b6;
+  margin-top: 10rem;
   padding-top: 10rem;
   padding-bottom: 10rem;
+  border-radius: 25px;
 }
 
 .bullet img{
