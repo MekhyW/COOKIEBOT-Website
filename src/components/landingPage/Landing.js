@@ -8,7 +8,7 @@ function Landing(){
         <>
             <Intro />
             <Side  side="r" title="Funcionalidade 1" desc="Smooth Moves"/>
-            <Side  side="l" title="Funcionalidade 2" desc="Descrição"/>
+            <Side  side="l" title="Funcionalidade 2" desc="Definitely not eevil"/>
             <Bullet />
         </>
     );

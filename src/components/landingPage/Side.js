@@ -5,7 +5,7 @@ function Side(props) {
         <>
             <div className="side">
             {props.side === 'l' ? <>
-                <img src="aa" alt="logo" />
+                <img src="skynet.gif" alt="logo" />
                 <div className="side-text">
                     <h1> {props.title} </h1>
                     <p>{props.desc}</p>
