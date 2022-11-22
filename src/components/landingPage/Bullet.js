@@ -2,8 +2,7 @@
 function Bullet(){
 
     return (
-        <div className="bulletFather">
-            <h2> Grupos que usam </h2>
+        <>
             <div className="bullet">
                 <div className="bullet-text">
                     <img src="super-friends.jpg" alt="logo" />
@@ -21,7 +20,7 @@ function Bullet(){
                     <p>Shhhh....</p>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 
