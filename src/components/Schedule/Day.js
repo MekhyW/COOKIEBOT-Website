@@ -1,8 +1,7 @@
 
-export default function Day(props) {
+function Day(props) {
 
-    //console.log(props.day);
-
+    console.log(props.day);
 
     return (
         <div className="job">
@@ -12,3 +11,5 @@ export default function Day(props) {
         </div>
     );
 }
+
+export default Day;
