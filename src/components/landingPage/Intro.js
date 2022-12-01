@@ -1,31 +1,41 @@
+import axios from 'axios';
 import {useEffect, useState} from 'react';
+var frase_greeting = "Loading...";
+var lang_greeting = "";
 
+async function getFrase(){
+    let promise = new Promise((resolve, reject) => {
+        axios
+          .get("https://www.greetingsapi.com/random")
+          .then((response) => resolve(response.data));
+    });
+    let result = await promise;
+    frase_greeting = result.greeting;
+    lang_greeting = result.language;
+}
+async function callgetFrase(){
+    await getFrase();
+}
+callgetFrase();
 
 function Intro(){
-
-    const frases = ["O bot mais supimpa do mercado!", "O bot mais legal do mercado!", "O bot mais legal do mundo!"];
-
-    const [frase, setFrase] = useState(frases[0]);
-
-    function choose(choices) {
-        var index = Math.floor(Math.random() * choices.length);
-        setFrase(choices[index]);
-      }
-
-      useEffect(() => {
-        const interval = setInterval(() => {
-          choose(frases);
-        }, 5000);
-      
-        return () => clearInterval(interval);
-      }, []);
+    const [frase, setFrase] = useState(frase_greeting);
+    const [lang, setLang] = useState(lang_greeting);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setFrase(frase_greeting);
+        setLang(lang_greeting);
+      }, 1000);
+      return () => clearInterval(interval);
+    }, []);
 
     return (
         <>
             <div className="intro">
                 <img src="landing_page_temporary.jpg" alt="logo"/>
                 <h1> CookieBot </h1>
-                <p>{frase}</p>
+                <p>{frase}! That's hello in {lang}!</p>
             </div>
         </>
     );
