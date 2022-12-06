@@ -1,32 +1,28 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
-var frase_greeting = "Loading...";
-var lang_greeting = "";
-
-async function getFrase(){
-    let promise = new Promise((resolve, reject) => {
-        axios
-          .get("https://www.greetingsapi.com/random")
-          .then((response) => resolve(response.data));
-    });
-    let result = await promise;
-    frase_greeting = result.greeting;
-    lang_greeting = result.language;
-}
-async function callgetFrase(){
-    await getFrase();
-}
-callgetFrase();
 
 function Intro(){
-    const [frase, setFrase] = useState(frase_greeting);
-    const [lang, setLang] = useState(lang_greeting);
-  
+    const [frase, setFrase] = useState('Loading...');
+    const [lang, setLang] = useState('');
+
+    async function getFrase(){
+        let promise = new Promise((resolve, reject) => {
+            axios
+              .get("https://www.greetingsapi.com/random")
+              .then((response) => resolve(response.data));
+        });
+        let result = await promise;
+        setFrase(result.greeting);
+        setLang(result.language);
+    }
+    async function callgetFrase(){
+        await getFrase();
+    }
+
     useEffect(() => {
       const interval = setInterval(() => {
-        setFrase(frase_greeting);
-        setLang(lang_greeting);
-      }, 1000);
+        callgetFrase();
+      }, 3000);
       return () => clearInterval(interval);
     }, []);
 
