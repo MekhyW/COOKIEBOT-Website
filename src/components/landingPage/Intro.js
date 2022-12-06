@@ -2,8 +2,8 @@ import axios from 'axios';
 import {useEffect, useState} from 'react';
 
 function Intro(){
-    const [frase, setFrase] = useState('Loading...');
-    const [lang, setLang] = useState('');
+    const [frase, setFrase] = useState('Oi');
+    const [lang, setLang] = useState('Portuguese');
 
     async function getFrase(){
         let promise = new Promise((resolve, reject) => {
