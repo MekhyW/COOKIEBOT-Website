@@ -8,12 +8,12 @@ function Side(props) {
                 <img src="skynet.gif" alt="logo" />
                 <div className="side-text">
                     <h1> {props.title} </h1>
-                    <p>{props.desc}</p>
+                    <h3>{props.desc}</h3>
                 </div>
             </> : <>
                 <div className="side-text">
                     <h1> {props.title} </h1>
-                    <p>{props.desc}</p>
+                    <h3>{props.desc}</h3>
                 </div>
                 <img src="robot_dance.gif" alt="logo" />
             </>}

@@ -29,9 +29,64 @@ function Intro(){
     return (
         <>
             <div className="intro">
-                <img src="landing_page_temporary.jpg" alt="logo"/>
-                <h1> CookieBot </h1>
-                <p>{frase}! That's hello in {lang}!</p>
+                <div className='canvas'>
+                    <img src="cookiebot.png" alt="logo"/>
+                    <h1> CookieBot </h1>
+                    <h2> Conversational AI, Infinite content and useful functionalities, for Telegram groups!</h2>
+                    <p>{frase}! That's hello in {lang}!</p>
+                    <div class="bubbles">
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                    </div>
+                </div>
             </div>
         </>
     );
